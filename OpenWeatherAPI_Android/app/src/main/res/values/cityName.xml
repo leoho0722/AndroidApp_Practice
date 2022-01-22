@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="cityName">
+        <item>台北</item>
+        <item>新北</item>
+        <item>桃園</item>
+        <item>台中</item>
+        <item>台南</item>
+        <item>高雄</item>
+        <item>紐約</item>
+        <item>首爾</item>
+    </string-array>
+</resources>
