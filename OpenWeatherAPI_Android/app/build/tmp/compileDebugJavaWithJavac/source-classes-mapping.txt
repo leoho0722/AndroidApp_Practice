@@ -1,0 +1,6 @@
+com/example/openweatherapi_android/BuildConfig.java
+ com.example.openweatherapi_android.BuildConfig
+com/example/openweatherapi_android/MainActivity.java
+ com.example.openweatherapi_android.MainActivity
+ com.example.openweatherapi_android.MainActivity$1
+ com.example.openweatherapi_android.MainActivity$1$1

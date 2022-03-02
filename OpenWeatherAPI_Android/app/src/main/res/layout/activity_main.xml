@@ -27,11 +27,9 @@
         android:layout_marginEnd="80dp"
         android:layout_marginBottom="400dp"
         android:text="@string/chooseCityBtn"
-        android:onClick="displayChooseCityPickerView"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/startSearchCityBtn"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="OnClick" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/startSearchCityBtn"
