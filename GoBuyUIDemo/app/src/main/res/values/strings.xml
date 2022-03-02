@@ -1,0 +1,16 @@
+<resources>
+    <!-- MainActivity 畫面上的 UI 元件文字 -->
+    <string name="app_name">GoBuy UI Demo</string>
+    <string name="countryTextView">國籍別</string>
+    <string name="countrySpinnerHint">下拉式選單</string>
+    <string name="memberAccountTextView">會員帳號</string>
+    <string name="phoneTextFieldHint">請輸入手機號碼</string>
+    <string name="emailTextFieldHint">請輸入電子信箱</string>
+    <string name="passwordTextView">會員密碼</string>
+    <string name="passwordTextFieldHint">密碼長度至少 6 個字元</string>
+    <string name="birthdayTextView">出生日期</string>
+    <string name="birthdayTextFieldHint">YYYY/MM/DD</string>
+    <string name="verifyTextView">驗證碼</string>
+    <string name="clearButton">清除重填</string>
+    <string name="submitButton">確認送出</string>
+</resources>
