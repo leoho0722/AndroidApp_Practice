@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/img_9193"
     tools:context=".MainActivity">
 
     <ImageView
@@ -14,6 +15,8 @@
         android:layout_marginTop="110dp"
         android:layout_marginEnd="142dp"
         android:contentDescription="TODO"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toTopOf="@+id/countrySpinner"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -84,7 +87,7 @@
         android:textColor="#FFFFFF"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
         app:layout_constraintTop_toBottomOf="@+id/countryTextView"
-        tools:ignore="TextContrastCheck" />
+        tools:ignore="RtlCompat,TextContrastCheck" />
 
     <TextView
         android:id="@+id/passwordTextView"
@@ -99,7 +102,7 @@
         app:layout_constraintBottom_toTopOf="@+id/birthdayTextView"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
         app:layout_constraintTop_toBottomOf="@+id/memberAccountTextView"
-        tools:ignore="TextContrastCheck" />
+        tools:ignore="RtlCompat,TextContrastCheck" />
 
     <TextView
         android:id="@+id/birthdayTextView"
@@ -113,7 +116,7 @@
         app:layout_constraintBottom_toTopOf="@+id/verifyTextView"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
         app:layout_constraintTop_toBottomOf="@+id/passwordTextView"
-        tools:ignore="TextContrastCheck" />
+        tools:ignore="RtlCompat,TextContrastCheck" />
 
     <TextView
         android:id="@+id/verifyTextView"
@@ -129,7 +132,7 @@
         app:layout_constraintBottom_toTopOf="@+id/clearButton"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
         app:layout_constraintTop_toBottomOf="@+id/birthdayTextView"
-        tools:ignore="TextContrastCheck" />
+        tools:ignore="RtlCompat,TextContrastCheck" />
 
     <Spinner
         android:id="@+id/countrySpinner"
@@ -155,7 +158,7 @@
         app:layout_constraintBottom_toTopOf="@+id/memberAccountTextView"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
         app:layout_constraintTop_toBottomOf="@+id/iconImageView"
-        tools:ignore="TextContrastCheck" />
+        tools:ignore="RtlCompat,TextContrastCheck" />
 
     <Button
         android:id="@+id/clearButton"
@@ -185,5 +188,12 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.09" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="239dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,6 +1,15 @@
 com/example/openweatherapi_android/BuildConfig.java
  com.example.openweatherapi_android.BuildConfig
+com/example/openweatherapi_android/model/OpenWeatherStruct.java
+ com.example.openweatherapi_android.model.OpenWeatherStruct
+ com.example.openweatherapi_android.model.OpenWeatherStruct$Coord
+ com.example.openweatherapi_android.model.OpenWeatherStruct$Main
+ com.example.openweatherapi_android.model.OpenWeatherStruct$Weather
+com/example/openweatherapi_android/model/API.java
+ com.example.openweatherapi_android.model.API
 com/example/openweatherapi_android/MainActivity.java
  com.example.openweatherapi_android.MainActivity
  com.example.openweatherapi_android.MainActivity$1
  com.example.openweatherapi_android.MainActivity$1$1
+ com.example.openweatherapi_android.MainActivity$2
+ com.example.openweatherapi_android.MainActivity$2$1

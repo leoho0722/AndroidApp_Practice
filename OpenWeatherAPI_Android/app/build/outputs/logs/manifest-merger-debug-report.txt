@@ -60,6 +60,10 @@ INJECTED from /Users/leoho/Desktop/AndroidApp_Practice/OpenWeatherAPI_Android/ap
 		INJECTED from /Users/leoho/Desktop/AndroidApp_Practice/OpenWeatherAPI_Android/app/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /Users/leoho/Desktop/AndroidApp_Practice/OpenWeatherAPI_Android/app/src/main/AndroidManifest.xml:2:11-69
+uses-permission#android.permission.INTERNET
+ADDED from /Users/leoho/Desktop/AndroidApp_Practice/OpenWeatherAPI_Android/app/src/main/AndroidManifest.xml:4:5-67
+	android:name
+		ADDED from /Users/leoho/Desktop/AndroidApp_Practice/OpenWeatherAPI_Android/app/src/main/AndroidManifest.xml:4:22-64
 application
 ADDED from /Users/leoho/Desktop/AndroidApp_Practice/OpenWeatherAPI_Android/app/src/main/AndroidManifest.xml:5:5-21:19
 MERGED from [com.google.android.material:material:1.5.0] /Users/leoho/.gradle/caches/transforms-3/e6a6b98a5bf4cf452a4bc3a3002b3bc1/transformed/material-1.5.0/AndroidManifest.xml:22:5-20

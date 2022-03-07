@@ -13,4 +13,13 @@
     <string name="verifyTextView">驗證碼</string>
     <string name="clearButton">清除重填</string>
     <string name="submitButton">確認送出</string>
+    <!-- LoginActivity 畫面上的 UI 元件文字 -->
+    <string name="Login_AccountTextView">會員帳號</string>
+    <string name="Login_AccountEditTextHint">請輸入手機號碼或電子信箱</string>
+    <string name="Login_PasswordTextView">會員密碼</string>
+    <string name="Login_PasswordEditTextHint">密碼長度至少 6 個字元</string>
+    <string name="HTTPS">HTTPS</string>
+    <string name="LongStay">常駐</string>
+    <string name="Login_ClearButton">清除重填</string>
+    <string name="Login_SubmitButton">確認送出</string>
 </resources>

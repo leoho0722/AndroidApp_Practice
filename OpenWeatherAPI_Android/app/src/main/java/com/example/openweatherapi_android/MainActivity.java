@@ -3,6 +3,7 @@ package com.example.openweatherapi_android;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -11,7 +12,16 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.openweatherapi_android.model.API;
+import com.example.openweatherapi_android.model.OpenWeatherStruct;
+
 import java.net.URL;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainActivity extends AppCompatActivity {
     /* UI 元件宣告 */
@@ -24,6 +34,8 @@ public class MainActivity extends AppCompatActivity {
     boolean isFirstPress = true; // 用來判斷是否為首次點選
     private String cityChooseResult; // 用來儲存選取到的城市名稱
     private String cityNameWithURL; // 用來給 URL 用的城市名稱
+
+    Retrofit apiManager;
 
     @Override
     // onCreate 類似 viewDidLoad
@@ -108,8 +120,26 @@ public class MainActivity extends AppCompatActivity {
     private View.OnClickListener startSearchCityWeather = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-            final String address = "https://api.openweathermap.org/data/2.5/weather?";
+            final String address = "https://api.openweathermap.org/data/2.5/";
             final String apiKey = "62ef5eba4eeb4662491645f8f68cc219";
+            apiManager = new Retrofit.Builder()
+//                    .baseUrl(address + "q=" + cityNameWithURL + "&appid=" + apiKey)
+                    .baseUrl(address)
+                    .addConverterFactory(GsonConverterFactory.create()).build();
+            API api = apiManager.create(API.class);
+//            api.getItem(cityNameWithURL, apiKey);
+            Call<OpenWeatherStruct> getWeather = api.getItem(cityNameWithURL, apiKey);
+            getWeather.enqueue(new Callback<OpenWeatherStruct>() {
+                @Override
+                public void onResponse(Call<OpenWeatherStruct> call, Response<OpenWeatherStruct> response) {
+                    Log.d("name", );
+                }
+
+                @Override
+                public void onFailure(Call<OpenWeatherStruct> call, Throwable t) {
+
+                }
+            });
 
         }
     };
