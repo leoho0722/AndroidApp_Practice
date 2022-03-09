@@ -15,7 +15,9 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+import com.example.gobuyuidemo.custom_alert.CustomAlert;
+
+public class MainActivity extends CustomAlert {
 
     private ImageView iconImageView;
     private TextView countryTextView;
@@ -33,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
     private ArrayAdapter countryArrayAdapter;
 
     Boolean firstChoose = true;
+    String countryChooseResults = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,6 +76,7 @@ public class MainActivity extends AppCompatActivity {
                     firstChoose = false;
                 } else {
                     Toast.makeText(view.getContext(), adapterView.getSelectedItem().toString(), Toast.LENGTH_SHORT).show();
+                    countryChooseResults = adapterView.getSelectedItem().toString();
                 }
             }
 
@@ -92,16 +96,22 @@ public class MainActivity extends AppCompatActivity {
     private View.OnClickListener clearData = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
+            countryChooseResults = "";
             phoneTextField.setText("");
             emailTextField.setText("");
             passwordTextField.setText("");
             birthdayTextField.setText("");
+            showAlertWithYesNo("有確認、取消按鈕的 Alert", "有確認、取消按鈕的 Alert","確認", "取消");
         }
     };
 
     private View.OnClickListener submitData = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
+            System.out.println("國籍別：" + countryChooseResults);
+            System.out.println("會員帳號：" + phoneTextField.getText());
+            System.out.println("會員密碼：" + emailTextField.getText());
+            System.out.println("出生日期：" + birthdayTextField.getText());
             Intent intent = new Intent(MainActivity.this, LoginActivity.class); // 跳頁到登入頁面
             startActivity(intent);
         }

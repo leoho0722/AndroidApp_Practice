@@ -22,4 +22,5 @@
     <string name="LongStay">常駐</string>
     <string name="Login_ClearButton">清除重填</string>
     <string name="Login_SubmitButton">確認送出</string>
+    <string name="Login_VerifyTextView">驗證碼</string>
 </resources>

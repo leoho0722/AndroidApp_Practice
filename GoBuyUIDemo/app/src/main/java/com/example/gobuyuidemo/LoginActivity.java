@@ -20,13 +20,14 @@ public class LoginActivity extends AppCompatActivity {
     private CheckBox LongStayCheckBox;
     private Button clearButton;
     private Button submitButton;
+    private TextView verifyTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        setUpIBOutlet();
-        setupButtonOnClickListener();
+        setUpIBOutlet(); // 設定 @IBOutlet
+        setupButtonOnClickListener(); // 設定 @IBAction
     }
 
     public void setUpIBOutlet() {
@@ -40,8 +41,10 @@ public class LoginActivity extends AppCompatActivity {
         LongStayCheckBox = findViewById(R.id.LongStayCheckBox);
         clearButton = findViewById(R.id.Login_ClearButton);
         submitButton = findViewById(R.id.Login_SubmitButton);
+        verifyTextView = findViewById(R.id.Login_VerifyTextView);
     }
 
+    // OnClickListener 類似 @IBAction
     public void setupButtonOnClickListener() {
         clearButton.setOnClickListener(clearData);
         submitButton.setOnClickListener(submitData);
@@ -50,14 +53,20 @@ public class LoginActivity extends AppCompatActivity {
     private View.OnClickListener clearData = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-
+            Login_AccountEditText.setText("");
+            Login_PasswordEditText.setText("");
+            HttpsCheckBox.setChecked(false);
+            LongStayCheckBox.setChecked(false);
         }
     };
 
     private View.OnClickListener submitData = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-
+            System.out.println("會員帳號：" + Login_AccountEditText.getText());
+            System.out.println("會員密碼：" + Login_PasswordEditText.getText());
+            System.out.println("HTTPS 勾選狀態：" + HttpsCheckBox.isChecked());
+            System.out.println("常駐 勾選狀態：" + HttpsCheckBox.isChecked());
         }
     };
 }

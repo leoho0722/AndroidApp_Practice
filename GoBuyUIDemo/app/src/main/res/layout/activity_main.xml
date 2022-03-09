@@ -168,6 +168,9 @@
         android:layout_marginEnd="70dp"
         android:layout_marginBottom="70dp"
         android:text="@string/clearButton"
+        android:textColor="@color/teal_700"
+        android:textStyle="bold"
+        android:background="@drawable/radius_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/submitButton"
         app:layout_constraintStart_toStartOf="parent" />
@@ -179,6 +182,9 @@
         android:layout_marginEnd="70dp"
         android:layout_marginBottom="70dp"
         android:text="@string/submitButton"
+        android:textColor="@color/teal_700"
+        android:textStyle="bold"
+        android:background="@drawable/radius_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
