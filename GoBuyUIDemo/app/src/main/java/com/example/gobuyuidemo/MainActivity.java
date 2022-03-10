@@ -1,119 +1,103 @@
 package com.example.gobuyuidemo;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.AndroidViewModel;
-
-import android.content.Intent;
+import com.example.gobuyuidemo.base_activity.BaseActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.example.gobuyuidemo.custom_alert.CustomAlert;
-
-public class MainActivity extends CustomAlert {
+public class MainActivity extends BaseActivity {
 
     private ImageView iconImageView;
-    private TextView countryTextView;
-    private Spinner countrySpinner;
-    private TextView memberAccountTextView;
-    private EditText phoneTextField;
-    private EditText emailTextField;
-    private TextView passwordTextView;
-    private EditText passwordTextField;
-    private TextView birthdayTextView;
-    private EditText birthdayTextField;
-    private TextView verifyTextView;
-    private Button clearButton;
-    private Button submitButton;
-    private ArrayAdapter countryArrayAdapter;
-
-    Boolean firstChoose = true;
-    String countryChooseResults = "";
+    private TextView Main_SloganTextView;
+    private ImageButton Main_LatestNewsImageButton;
+    private ImageButton Main_ScanImageButton;
+    private ImageButton Main_ActivitySearchImageButton;
+    private ImageButton Main_BonusPointsSearchImageButton;
+    private ImageButton Main_SearchStoreImageButton;
+    private ImageButton Main_FunctionSettingsImageButton;
+    private ImageButton Main_JoinSpecialStoreImageButton;
+    private ImageButton Main_JoinDiscountStoreImageButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         setupIBOutlet(); // 設定 @IBOutlet
-        setButtonOnClickListener(); // 設定 @IBAction
-        setupCountrySpinnerArrayAdapterDataInput(); // 設定 Spinner 內的資料跟選擇事件
+        setupButtonOnClickListener(); // 設定 @IBAction
     }
 
-    public void setupIBOutlet() {
+    private void setupIBOutlet() {
         iconImageView = findViewById(R.id.iconImageView);
-        countryTextView = findViewById(R.id.countryTextView);
-        countrySpinner = findViewById(R.id.countrySpinner);
-        memberAccountTextView = findViewById(R.id.memberAccountTextView);
-        phoneTextField = findViewById(R.id.phoneTextField);
-        emailTextField = findViewById(R.id.emailTextField);
-        passwordTextView = findViewById(R.id.passwordTextView);
-        passwordTextField = findViewById(R.id.passwordTextField);
-        birthdayTextView = findViewById(R.id.birthdayTextView);
-        birthdayTextField = findViewById(R.id.birthdayTextField);
-        verifyTextView = findViewById(R.id.verifyTextView);
-        clearButton = findViewById(R.id.clearButton);
-        submitButton = findViewById(R.id.submitButton);
+        Main_SloganTextView = findViewById(R.id.Main_SloganTextView);
+        Main_LatestNewsImageButton = findViewById(R.id.Main_LatestNewsImageButton);
+        Main_ScanImageButton = findViewById(R.id.Main_ScanImageButton);
+        Main_ActivitySearchImageButton = findViewById(R.id.Main_ActivitySearchImageButton);
+        Main_BonusPointsSearchImageButton = findViewById(R.id.Main_BonusPointsSearchImageButton);
+        Main_SearchStoreImageButton = findViewById(R.id.Main_SearchStoreImageButton);
+        Main_FunctionSettingsImageButton = findViewById(R.id.Main_FunctionSettingsImageButton);
+        Main_JoinSpecialStoreImageButton = findViewById(R.id.Main_JoinSpecialStoreImageButton);
+        Main_JoinDiscountStoreImageButton = findViewById(R.id.Main_JoinDiscountStoreImageButton);
     }
 
-    public void setupCountrySpinnerArrayAdapterDataInput() {
-        countryArrayAdapter = ArrayAdapter.createFromResource(this, R.array.country, android.R.layout.simple_dropdown_item_1line);
-        countrySpinner.setAdapter(countryArrayAdapter);
-        setupSpinnerOnItemSelectedListener();
+    private void setupButtonOnClickListener() {
+        Main_LatestNewsImageButton.setOnClickListener(latestNews);
+        Main_ScanImageButton.setOnClickListener(scan);
+        Main_ActivitySearchImageButton.setOnClickListener(activitySearch);
+        Main_BonusPointsSearchImageButton.setOnClickListener(bonusPointsSearch);
+        Main_SearchStoreImageButton.setOnClickListener(searchStore);
+        Main_FunctionSettingsImageButton.setOnClickListener(functionSettings);
+        Main_JoinSpecialStoreImageButton.setOnClickListener(joinSpecialStore);
+        Main_JoinDiscountStoreImageButton.setOnClickListener(joinDiscountStore);
     }
 
-    private void setupSpinnerOnItemSelectedListener() {
-        countrySpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override // 有選擇項目做的事
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                if (firstChoose) {
-                    firstChoose = false;
-                } else {
-                    Toast.makeText(view.getContext(), adapterView.getSelectedItem().toString(), Toast.LENGTH_SHORT).show();
-                    countryChooseResults = adapterView.getSelectedItem().toString();
-                }
-            }
-
-            @Override // 沒有選擇項目做的事
-            public void onNothingSelected(AdapterView<?> adapterView) {
-
-            }
-        });
-    }
-
-    // OnClickListener 類似 @IBAction
-    public void setButtonOnClickListener() {
-        clearButton.setOnClickListener(clearData);
-        submitButton.setOnClickListener(submitData);
-    }
-
-    private View.OnClickListener clearData = new View.OnClickListener() {
+    private View.OnClickListener latestNews = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-            countryChooseResults = "";
-            phoneTextField.setText("");
-            emailTextField.setText("");
-            passwordTextField.setText("");
-            birthdayTextField.setText("");
-            showAlertWithYesNo("有確認、取消按鈕的 Alert", "有確認、取消按鈕的 Alert","確認", "取消");
+            System.out.println("點擊了最新消息按鈕");
         }
     };
-
-    private View.OnClickListener submitData = new View.OnClickListener() {
+    private View.OnClickListener scan = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-            System.out.println("國籍別：" + countryChooseResults);
-            System.out.println("會員帳號：" + phoneTextField.getText());
-            System.out.println("會員密碼：" + emailTextField.getText());
-            System.out.println("出生日期：" + birthdayTextField.getText());
-            Intent intent = new Intent(MainActivity.this, LoginActivity.class); // 跳頁到登入頁面
-            startActivity(intent);
+            System.out.println("點擊了掃一掃按鈕");
+        }
+    };
+    private View.OnClickListener activitySearch = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            System.out.println("點擊了活動查詢按鈕");
+        }
+    };
+    private View.OnClickListener bonusPointsSearch = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            System.out.println("點擊了紅利點數查詢按鈕");
+        }
+    };
+    private View.OnClickListener searchStore = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            System.out.println("點擊了搜尋店家按鈕");
+        }
+    };
+    private View.OnClickListener functionSettings = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            System.out.println("點擊了功能設置按鈕");
+        }
+    };
+    private View.OnClickListener joinSpecialStore = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            System.out.println("點擊了申請加入特約店按鈕");
+        }
+    };
+    private View.OnClickListener joinDiscountStore = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            System.out.println("點擊了申請加入優惠店按鈕");
         }
     };
 }

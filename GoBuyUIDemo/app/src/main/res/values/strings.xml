@@ -1,5 +1,5 @@
 <resources>
-    <!-- MainActivity 畫面上的 UI 元件文字 -->
+    <!-- RegisterActivity 畫面上的 UI 元件文字 -->
     <string name="app_name">GoBuy UI Demo</string>
     <string name="countryTextView">國籍別</string>
     <string name="countrySpinnerHint">下拉式選單</string>
@@ -23,4 +23,14 @@
     <string name="Login_ClearButton">清除重填</string>
     <string name="Login_SubmitButton">確認送出</string>
     <string name="Login_VerifyTextView">驗證碼</string>
+    <!-- MainActivity 畫面上的 UI 元件文字 -->
+    <string name="Main_SloganTextView">移動消費 致富商機</string>
+    <string name="Main_LatestNewsImageButton">最新消息</string>
+    <string name="Main_ScanImageButton">掃一掃</string>
+    <string name="Main_ActivitySearchImageButton">活動查詢</string>
+    <string name="Main_BonusPointsSearchImageButton">紅利點數查詢</string>
+    <string name="Main_SearchStoreImageButton">搜尋店家</string>
+    <string name="Main_FunctionSettingsImageButton">功能設置</string>
+    <string name="Main_JoinSpecialStoreImageButton">申請加入特約店</string>
+    <string name="Main_JoinDiscountStoreImageButton">申請加入優惠店</string>
 </resources>

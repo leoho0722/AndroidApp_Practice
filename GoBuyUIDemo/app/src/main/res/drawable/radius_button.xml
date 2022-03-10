@@ -2,5 +2,5 @@
 <shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
     <solid android:color="@android:color/transparent"></solid> <!-- 設定按鈕背景色 -->
     <corners android:radius="30dp"></corners> <!-- 設定按鈕圓角 -->
-    <stroke android:width="5dp" android:color="#000000"></stroke> <!-- 設定按鈕邊框線粗細、顏色 -->
+    <stroke android:width="5dp" android:color="#000"></stroke> <!-- 設定按鈕邊框線粗細、顏色 -->
 </shape>
